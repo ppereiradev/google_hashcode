@@ -25,9 +25,13 @@ def combinationUtil(array, data, start, end, index, p):
 
 	i = start
 	while i <= end and (end - i + 1) >= (p - index):
+		if total_slices == maximum:
+			break
+
 		data[index] = array[i]
 		combinationUtil(array, data, i+1, end, index+1, p)
 		i += 1
+
 
 
 
@@ -41,9 +45,12 @@ f.close()
 
 pizzas_slices_amount = [int(i) for i in pizzas_slices_amount]
 
-
-for i in range(1,len(pizzas_slices_amount)+1):
-	printCombination(pizzas_slices_amount, i)
+aux = len(pizzas_slices_amount)+1
+while aux > 0:
+	printCombination(pizzas_slices_amount, aux)
+	aux -= 1
+	if total_slices == maximum:
+			break
 
 print("total slices: " + str(total_slices))
 print("types of pizza: " + str(len(type_pizza)))
