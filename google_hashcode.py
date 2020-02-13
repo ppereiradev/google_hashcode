@@ -1,3 +1,6 @@
+import sys
+sys.setrecursionlimit(10000)
+
 total_slices = 0
 maximum = 0
 type_pizza = []
@@ -36,7 +39,7 @@ def combinationUtil(array, data, start, end, index, p):
 
 
 
-f = open("c_medium.in", "r")
+f = open("d_quite_big.in", "r")
 first_line = f.readline().split()
 
 maximum = int(first_line[0])
@@ -56,7 +59,7 @@ print("total slices: " + str(total_slices))
 print("types of pizza: " + str(len(type_pizza)))
 print("pizzas: " + str(type_pizza))
 
-f = open("c_medium.out","w+")
+f = open("d_quite_big.out","w+")
 f.write(str(len(type_pizza)) + "\n")
 
 for i in range(0, len(type_pizza)):
